@@ -1,81 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-
-    Copyright 2010-2023 the original author or authors.
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-       https://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-
--->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
   <parent>
     <groupId>org.mybatis</groupId>
     <artifactId>mybatis-parent</artifactId>
     <version>40</version>
     <relativePath/>
   </parent>
-
   <artifactId>mybatis-spring</artifactId>
   <version>3.0.3-SNAPSHOT</version>
   <packaging>jar</packaging>
-
   <name>mybatis-spring</name>
   <description>An easy-to-use Spring bridge for MyBatis sql mapping framework.</description>
   <url>http://www.mybatis.org/spring/</url>
-
   <contributors>
     <contributor>
       <name>Alex Rykov</name>
       <email>Alex.Rykov@gmail.com</email>
     </contributor>
-
     <contributor>
       <name>Andrius Juozapaitis</name>
       <email>andriusj@gmail.com</email>
     </contributor>
-
     <contributor>
       <name>Giovanni Cuccu</name>
       <email>giovanni.cuccu@gmail.com</email>
     </contributor>
-
     <contributor>
       <name>Kay Huber</name>
       <email>kay.huber@gmail.com</email>
     </contributor>
-
     <contributor>
       <name>Lishu Luo</name>
       <email>lishu.luo@gmail.com</email>
     </contributor>
-
     <contributor>
       <name>Michael Lanyon</name>
       <email>lanyonm@gmail.com</email>
     </contributor>
-
     <contributor>
       <name>Raj Nagappan</name>
       <email>raj@velocitylabs.com</email>
     </contributor>
-
     <contributor>
       <name>Tomas Pinos</name>
       <email>tomas.pinos@gmail.com</email>
     </contributor>
   </contributors>
-
   <scm>
     <connection>scm:git:ssh://git@github.com/mybatis/spring.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/mybatis/spring.git</developerConnection>
@@ -97,35 +68,27 @@
       <url>scm:git:ssh://git@github.com/mybatis/spring.git</url>
     </site>
   </distributionManagement>
-
   <properties>
     <clirr.comparisonVersion>2.1.0</clirr.comparisonVersion>
     <findbugs.onlyAnalyze>org.mybatis.spring.*,org.mybatis.spring.mapper.*,org.mybatis.spring.support.*,org.mybatis.spring.transaction.*</findbugs.onlyAnalyze>
     <gcu.product>Spring</gcu.product>
     <osgi.import>org.springframework.batch.*;resolution:=optional,*</osgi.import>
     <osgi.dynamicImport>*</osgi.dynamicImport>
-
     <!-- Maven compiler options -->
     <java.version>17</java.version>
     <java.release.version>17</java.release.version>
-
     <mybatis.version>3.5.14</mybatis.version>
     <spring.version>6.0.13</spring.version>
     <spring-batch.version>5.0.3</spring-batch.version>
     <module.name>org.mybatis.spring</module.name>
-
     <junit.version>5.10.1</junit.version>
-
     <!-- Reproducible Builds -->
     <project.build.outputTimestamp>1684514485</project.build.outputTimestamp>
-
     <!-- TODO: Remove this after mybatis-parent 40 -->
     <jacoco.plugin>0.8.11</jacoco.plugin>
-
     <!-- Set byte buddy to experimental -->
     <net.bytebuddy.experimental>true</net.bytebuddy.experimental>
   </properties>
-
   <dependencies>
     <!-- Compile dependencies -->
     <dependency>
@@ -134,7 +97,6 @@
       <version>${mybatis.version}</version>
       <scope>provided</scope>
     </dependency>
-
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
@@ -147,65 +109,49 @@
       <version>${spring.version}</version>
       <scope>provided</scope>
     </dependency>
-
     <dependency>
       <groupId>org.springframework.batch</groupId>
       <artifactId>spring-batch-infrastructure</artifactId>
       <version>${spring-batch.version}</version>
       <scope>provided</scope>
     </dependency>
-
     <!-- Test dependencies -->
-
-    <dependency>
-      <groupId>com.atomikos</groupId>
-      <artifactId>transactions-jdbc</artifactId>
-      <version>6.0.0</version>
-      <scope>test</scope>
-    </dependency>
-
     <dependency>
       <groupId>org.apache.derby</groupId>
       <artifactId>derby</artifactId>
       <version>10.16.1.1</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>org.jboss.byteman</groupId>
       <artifactId>byteman-bmunit</artifactId>
       <version>4.0.21</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
       <version>${spring.version}</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
       <version>${spring.version}</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>org.springframework.batch</groupId>
       <artifactId>spring-batch-core</artifactId>
       <version>${spring-batch.version}</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>org.springframework.batch</groupId>
       <artifactId>spring-batch-test</artifactId>
@@ -218,35 +164,30 @@
         </exclusion>
       </exclusions>
     </dependency>
-
     <dependency>
       <groupId>org.hsqldb</groupId>
       <artifactId>hsqldb</artifactId>
       <version>2.7.2</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
       <version>2.0.9</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
       <version>5.7.0</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
       <version>3.24.2</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>com.mockrunner</groupId>
       <artifactId>mockrunner-core</artifactId>
@@ -303,7 +244,6 @@
         </exclusion>
       </exclusions>
     </dependency>
-
     <dependency>
       <groupId>jakarta.transaction</groupId>
       <artifactId>jakarta.transaction-api</artifactId>
@@ -316,7 +256,6 @@
       <version>6.0.0</version>
       <scope>test</scope>
     </dependency>
-
     <dependency>
       <groupId>net.bytebuddy</groupId>
       <artifactId>byte-buddy</artifactId>
@@ -330,7 +269,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
   <repositories>
     <repository>
       <id>sonatype-oss-snapshots</id>
@@ -354,7 +292,6 @@
       <url>https://repo.spring.io/milestone</url>
     </repository>
   </repositories>
-
   <pluginRepositories>
     <pluginRepository>
       <releases>
@@ -373,9 +310,7 @@
       <url>https://repo.spring.io/milestone</url>
     </pluginRepository>
   </pluginRepositories>
-
   <build>
-
     <resources>
       <resource>
         <targetPath>META-INF</targetPath>
